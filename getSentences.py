@@ -10,10 +10,14 @@ for i in range(3, 8):
     lengthToWords[i] = file.readWordFile(i)
 
 lengthsList = [
-    [7, 3],
-    #[1, 3, 3, 5, 5, 2],
-    [7, 6]
-    #[3, 4, 5, 5]
+    ["Forever", 3],
+    ["Nothing", 3],
+    ["I", 3, 3, "Think", "About", "It"],
+    ["I", 3, 3, "Every", "Night", 2],
+    ["Forever", 6],
+    ["Nothing", 6],
+    [3, 4, "Every", "Night"],
+    [3, 4, "Think", "About"]
 ]
 
 exempt = file.getExemptStrings()
