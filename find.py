@@ -27,13 +27,14 @@ def getWordsOfLength(strings, wordLength):
 
 def getSentencesOfLengths(lengthToWords, exempt, lengths):
 
-    def validWord(word):
-        return not (word in exempt)
-
     def getSentences(lengths, prefix):
         if (len(lengths) == 0):
             return [prefix]
         else:
+
+            def validWord(word):
+                return not (word in exempt) and not (word in prefix)
+
             sentences = []
             length = lengths[0]
 

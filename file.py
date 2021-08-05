@@ -1,3 +1,6 @@
+def getFilename(dir, name):
+    return dir + str(name) + ".txt"
+
 def readFile(filename):
     file = open(filename)
     rows = list()
@@ -73,38 +76,41 @@ def getAllStrings(crossword):
 
 crosswordFile = "text.txt"
 exemptFile = "exempt.txt"
-stringsFile = "strings.txt"
 
-def getCrosswordStrings():
+def readCrosswordStrings():
     crossword = readFile(crosswordFile)
     return getAllStrings(crossword)
 
-def getAllStrings():
-    return readFile(stringsFile)
-
-def getExemptStrings():
+def readExemptStrings():
     return readFile(exemptFile)
 
 # Words
 
 wordsDir = "words/"
-def wordFilename(length):
-    return wordsDir + str(length) + ".txt"
-
 def readWordFile(length):
-    return readFile(wordFilename(length))
+    return readFile(getFilename(wordsDir, length))
 
-def writeWordFile(length, words):
-    return writeFile(wordFilename(length), words)
+def writeWordFile(length, sentences):
+    return writeFile(getFilename(wordsDir, length), sentences)
 
-# Sentences
+# Guesses
 
-sentencesDir = "sentences/"
-def sentenceFilename(lengths):
-    return sentencesDir + "-".join([str(x) for x in lengths]) + ".txt"
+guessDir = "guess/"
+guessTemplateFile = "guess/templates.txt"
 
-def readSentenceFile(lengths):
-    return readFile(sentenceFilename(lengths))
+def readGuessFile(index):
+    guesses = readFile(getFilename(guessDir, index))
+    return [x.split(" ") for x in guesses]
 
-def writeSentenceFile(lengths, sentences):
-    return writeFile(sentenceFilename(lengths), sentences)
+def writeGuessFile(index, guesses):
+    return writeFile(getFilename(guessDir, index), guesses)
+
+def readGuessTemplates():
+    rows = readFile(guessTemplateFile)
+    guesses = dict()
+    for row in rows:
+        words = row.split(" ")
+        index = int(words[0])
+        guesses.setdefault(index, list())
+        guesses[index].append([int(x) if x.isdigit() else str(x) for x in words[1:]])
+    return guesses

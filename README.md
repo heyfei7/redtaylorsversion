@@ -22,3 +22,24 @@
 28. Run Feat Ed Sheeran
 29. (3) (4) (5) (5)
 28. All Too Well Ten Minute Version
+
+## Method
+
+```
+import file
+import find
+
+# get strings
+
+strings = file.readCrosswordStrings()
+file.writeFile("strings.txt", strings)
+
+# get words
+
+strings = file.readCrosswordStrings()
+
+for wordLength in range(3, 8):
+    words = find.getWordsOfLength(strings, wordLength)
+    file.writeWordFile(wordLength, words)
+
+```
