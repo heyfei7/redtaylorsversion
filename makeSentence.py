@@ -1,3 +1,17 @@
+def getSentences(prefix, lengths):
+    sentences = list()
+    if (len(lengths) == 0):
+        return [prefix]
+    else:
+        length = lengths[0]
+        if type(length) == type(""):
+            return sentences + getSentences(prefix + " " + length, lengths[1:])
+        
+        for word in words[length]:
+            sentences += getSentences(prefix + " " + word, lengths[1:])
+
+    return sentences
+
 words = {
     1: ["I", "A"],
     2: ["Me", "Or"],
@@ -8,17 +22,12 @@ words = {
     7: ["Forever", "Nothing"]
 }
 
-def printSentence(prefix, lengths):
-    if (len(lengths) == 0):
-        print(prefix)
-    else:
-        length = lengths[0]
-        if type(length) == type(""):
-            printSentence(prefix + " " + length, lengths[1:])
-            return
-        
-        for word in words[length]:
-            printSentence(prefix + " " + word, lengths[1:])
+lengthsList = [
+    [7, 3],
+    [1, 3, 3, 5, 5, 2],
+    [7, 6],
+    [3, 4, 5, 5]
+]
 
-#printSentence("", ["I", 3, 3, "Think", "About", 2])
-printSentence("", [3, 4, "Every", "Night"])
+for lengths in lengthsList:
+    print(getSentences("", lengths))

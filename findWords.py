@@ -98,7 +98,7 @@ def writeWords(words, file):
         file.write(word + "\n")
     
 for wordLength in range(2, 8):
-    newfile = open(str(wordLength) + ".txt", "w")
+    newfile = open("words/" + str(wordLength) + ".txt", "w")
     
     fwords, bwards = getWordFromRows(rows, wordLength)
     writeWords(fwords, newfile)
