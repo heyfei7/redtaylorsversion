@@ -25,7 +25,7 @@
 
 ## Method
 
-```
+```python
 import file
 import find
 

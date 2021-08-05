@@ -1,5 +1,5 @@
-def getFilename(dir, name):
-    return dir + str(name) + ".txt"
+def getFilename(dir, name, ext=".txt"):
+    return dir + str(name) + ext #".txt"
 
 def readFile(filename):
     file = open(filename)
@@ -89,6 +89,9 @@ def readExemptStrings():
 wordsDir = "words/"
 def readWordFile(length):
     return readFile(getFilename(wordsDir, length))
+
+def readExemptFile(length):
+    return readFile(getFilename(wordsDir, length, ".exempt"))
 
 def writeWordFile(length, sentences):
     return writeFile(getFilename(wordsDir, length), sentences)
