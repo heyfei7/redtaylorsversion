@@ -25,4 +25,5 @@
 
 ## Method
 
-\```python:script.py
+\```python:tests/src/sample.py 
+\```
