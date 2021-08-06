@@ -22,8 +22,3 @@
 28. Run Feat Ed Sheeran
 29. (3) (4) (5) (5)
 28. All Too Well Ten Minute Version
-
-## Method
-
-\```python:tests/src/sample.py 
-\```
