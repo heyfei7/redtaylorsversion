@@ -5,10 +5,10 @@
 
 ## Possible Phrases
 
-5-5 Every Night
-5-5 Think About
-5-5-2 Think About Me
-5-5-2 Think About It
+- 5-5 Every Night
+- 5-5 Think About
+- 5-5-2 Think About Me
+- 5-5-2 Think About It
 
 ## Answer Key
 
@@ -25,21 +25,4 @@
 
 ## Method
 
-```python
-import file
-import find
-
-# get strings
-
-strings = file.readCrosswordStrings()
-file.writeFile("strings.txt", strings)
-
-# get words
-
-strings = file.readCrosswordStrings()
-
-for wordLength in range(3, 8):
-    words = find.getWordsOfLength(strings, wordLength)
-    file.writeWordFile(wordLength, words)
-
-```
+\```python:script.py
