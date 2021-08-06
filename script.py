@@ -12,7 +12,7 @@ shortestWord = 1
 longestWord = 10
 guessIndices = [2, 5, 6, 8]
 
-STEP = 3
+STEP = 1
 
 # Find Words
 if STEP == 1:
@@ -46,7 +46,8 @@ if STEP == 2:
     guessMaker.makeGuessesFromTemplates(wordsBag.bag, guessTemplates)
 
     # Write to file
-    guessMaker.write()
+    print([" ".join(x) for x in guessMaker.guesses[5]])
+    # guessMaker.write()
 
 # Check if guesses are correct
 if STEP == 3:
