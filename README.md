@@ -2,14 +2,6 @@
 
 [Tweet](https://twitter.com/taylorswift13/status/1423283014604185607)
 [Website](https://redtaylorsversion.taylorswift.com/)
-
-## Possible Phrases
-
-- 5-5 Every Night
-- 5-5 Think About
-- 5-5-2 Think About Me
-- 5-5-2 Think About It
-
 ## Answer Key
 
 21. Ronan
