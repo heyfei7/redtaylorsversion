@@ -22,8 +22,3 @@
 28. Run Feat Ed Sheeran
 29. The Very First Night
 28. All Too Well Ten Minute Version
-
-## Method
-
-\```python:scripts./src/sample.py 
-\```
